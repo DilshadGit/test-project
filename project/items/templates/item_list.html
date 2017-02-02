@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-8">
+		{% for object in object_list %}
+			<h4>
+				<a href="{% url 'items:item_detail' slug=object.slug %}">{{object.car_name}}</a> 
+			</h4>
+			<h5>Model: {{object.car_model}}  <i class="pull-right">Date: {{object.create_date}}</i></h5>	
+				<br/>
+				
+				<p class="content">{{object.content|linebreaks|truncatechars:400}}</p>
+				<a href="{% url 'items:item_detail' slug=object.slug %}">
+					<button type="button" class="btn btn-primary pull-right readmore">Read More </button>
+				</a>
+				<br/><br/><hr/>
+		{% endfor %}
+
+	</div>
+
+
+	<div class="col-md-4 audio">
+		{% for object in object_list %}
+			{% if object.image %}
+				<img src="{{StATIC_URL}}{{object.image.url}}" class="thumbnail img-responsive">
+			{% endif %}
+		{% endfor %}
+	</div>
+
+	<div class="col-md-12">
+		<div class="pagination col-md-8">
+		    <span class="step-links">
+		        {% if object_list.has_previous %}
+		            <a href="?{{page_num}}={{ object_list.previous_page_number }}">previous</a>
+		        {% endif %}
+
+		        <span class="current">
+		            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+		        </span>
+
+		        {% if object_list.has_next %}
+		            <a href="?{{page_num}}={{ object_list.next_page_number }}">next</a>
+		        {% endif %}
+		    </span>
+		
+			<div class="pull-right">
+				{% if user.is_staff or user.is_authenticated %}
+					<a href="{% url 'items:item_create' %}">
+						<button class="btn btn-success create">Add New Page</button>
+					</a>
+					<br/>
+				{% endif %}
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% endblock content %}

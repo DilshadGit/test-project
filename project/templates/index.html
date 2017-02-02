@@ -1,0 +1,38 @@
+ {% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-8 content"> 
+  	<h1>Audi Automobile</h1>
+  	
+  	<b>{{title}}</b>
+  	<p>
+  		We've designed a small remote technical test, It's open ended test where you should be able to make choices and assumptions without guidance. We're interested in seeing how you think and architect out the code.
+  	</p>
+  	<p>
+		If you could post the code to github or bitbucket once done then we'll review ASAP and decide whether to invite in for interview.
+  	</p>
+  	<p>
+  		Build a task list application in django.
+		Users will first login to their accounts. 
+		Once they login, then should see a list of everyone’s tasks.
+		There is an “Add” button to add a new todo item.
+		You can via the UI “Edit”, “Mark Done” or “Delete” a task.
+		Edit: Is editing the task name, description and status (done/undone) (only your own)
+		Mark Done: is changing the status of a task to “done” and record who did it.
+		Delete: is deleting a task (only your own)
+		There is a “Hide Completed tasks” button, click on that to filter out todo items that are already done.
+		Tests for the application. (We value good testing over complicated features)
+
+  	</p>
+  	</div>
+  	<div class="col-md-4">
+  		
+        <img src="{% static 'images/Audi-Logo.jpg' %}" class="thumbnail img-responsive logo">
+      
+  	</div>
+</div>
+
+  {% endblock %}

@@ -1,0 +1,38 @@
+
+
+
+
+p#hint_id_username.help-block {
+	display: none;
+}
+
+div.col-md-8 {
+	margin-top: 30px;
+	
+	margin-bottom: 30px;
+}
+
+div.col-md-8 p.content {
+	text-align: justify;
+}
+
+img.thumbnail.img-responsive.logo {
+	margin-top: 50px;
+}
+
+
+div.container-fuild {
+	background: #000;
+	height: 120px;
+	margin-top: 30px;
+}
+
+p.company {
+	color: #fff;
+	text-align: center;
+	margin-top: 40px;
+}
+
+div.col-md-4.audi > img.thumbnail.img-responsive{
+	margin-top: 100px;
+}

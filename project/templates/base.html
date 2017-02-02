@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+
+	 {% include 'header.html' %}
+	 {% include 'navbar.html' %}
+
+	<div class="row">
+		<br>
+	</div>
+
+    <div class="container" style="background-color: #ddd;">
+     
+     	{% block content %} 
+
+
+		{% endblock %}
+
+    </div><!-- /.container -->
+
+
+    {% include 'footer.html' %}

@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_root')
-    
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static",),
 )
@@ -131,12 +131,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')
 
 
-
-#Crispy FORM TAGs SETTINGS
+# Crispy FORM TAGs SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
-#DJANGO REGISTRATION REDUX SETTINGS
+# DJANGO REGISTRATION REDUX SETTINGS
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1

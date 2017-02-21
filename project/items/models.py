@@ -19,25 +19,23 @@ def upload_image_location(instance, filename):
 
 class Car(models.Model):
     # This line below will tell the browser who create the page
-    user 			= models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
-    car_name        = models.CharField(max_length=120, blank=False, null=True)
-    car_model 	    = models.CharField(max_length=7, blank=False, null=True)
-    slug 			= models.SlugField(unique=True)
-    image 			= models.ImageField(upload_to=upload_image_location, null=True,
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
+    car_name = models.CharField(max_length=120, blank=False, null=True)
+    car_model = models.CharField(max_length=7, blank=False, null=True)
+    slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to=upload_image_location, null=True,
                               blank=True, height_field="height_field", width_field="width_field")
-    height_field 	= models.IntegerField(default=0)
-    width_field		= models.IntegerField(default=0)
-    content 		= models.TextField()
-    create_date 	= models.DateTimeField(auto_now=True, auto_now_add=False)
-    updated 		= models.DateTimeField(auto_now=False, auto_now_add=True)
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
+    content = models.TextField()
+    create_date = models.DateTimeField(auto_now=True, auto_now_add=False)
+    updated = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
         return self.car_name
 
-
     def get_absolute_url(self):
         return reverse('items:item_detail', kwargs={'slug': self.slug})
-
 
     class Meta:
         ordering = ['-create_date', '-updated']

@@ -2,10 +2,6 @@ from __future__ import unicode_literals
 
 from django.conf import settings
 from django.db import models
-'''
-This is sent at the beginning of a model’s save() method.ss
-Arguments sent with this signal:
-'''
 from django.db.models.signals import pre_save
 from django.core.urlresolvers import reverse
 from django.utils.text import slugify

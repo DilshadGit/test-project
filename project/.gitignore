@@ -138,3 +138,6 @@ fabric.properties
 # SQl database
 
 *.sqlite3
+
+# static
+static_root/
